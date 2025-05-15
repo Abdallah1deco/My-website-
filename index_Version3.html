@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الكتب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .search-section, .upload-section {
+            margin-top: 30px;
+        }
+        .pdf-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pdf-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .pdf-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .pdf-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pdf-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>مكتبة الكتب</h1>
+
+    <!-- قسم البحث -->
+    <div class="search-section">
+        <h2>بحث داخل الكتب</h2>
+        <form action="/search" method="get">
+            <input type="text" name="q" placeholder="أدخل كلمة البحث" required>
+            <button type="submit">بحث</button>
+        </form>
+    </div>
+
+    <!-- قسم رفع الملفات -->
+    <div class="upload-section">
+        <h2>إضافة كتاب جديد</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdfFile" accept="application/pdf" required>
+            <button type="submit">رفع الكتاب</button>
+        </form>
+    </div>
+</body>
+</html>
